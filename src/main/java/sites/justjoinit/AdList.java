@@ -22,6 +22,8 @@ public class AdList extends DefaultPage {
   @FindBy(css = "#mui-p-16968-T-salaryOnly")
   private WebElement withSalaryFilter;
 
+//  @FindBy(  = "#__next > div.MuiBox-root.css-1v89lmg > div.css-c4vap3 > div > div.MuiBox-root.css-1fmajlu > div > div > div:nth-child(3) > div > div:nth-child(2)")
+//  private WebElement listElement;
 
   WebDriverWait wait = new WebDriverWait( driver, 5 );
   JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -43,15 +45,38 @@ public class AdList extends DefaultPage {
 
   public int countAds() {
 
+    int totalSum = 0;
     // Pobranie listy elementów
-    List<WebElement> ads = driver.findElements( By.className( "css-2crog7" ) );
-    WebElement lastItem = ads.get(ads.size() - 1);
+    WebElement listElement = driver.findElement(By.className( "css-2crog7" ));
+    List<WebElement> visibleElements = driver.findElements( By.className( "css-2crog7" ) );
+    WebElement lastElement = visibleElements.get(visibleElements.size() - 1);
 
-    js.executeScript("arguments[0].scrollIntoView(true);", lastItem);
-    //zwróć liczbę ogłoszeń
-  int adsCount = ads.size();
- return adsCount;
 
+    while (true) {
+      // Pobranie wartości liczbowych z widocznych elementów
+      for (WebElement element : visibleElements) {
+        String elementText = element.getText();
+        try {
+          int elementValue = Integer.parseInt(elementText);
+          totalSum += elementValue;
+        } catch (NumberFormatException e) {
+          // Pomiń element, jeśli nie zawiera liczby
+        }
+      }
+
+      // Przescrollowanie listy o wysokość widocznej części
+      js.executeScript("arguments[0].scrollIntoView(true)", lastElement);
+
+      // Znalezienie nowych widocznych elementów
+      visibleElements = listElement.findElements(By.className( "css-2crog7"));
+
+      // Sprawdzenie, czy nie ma już nowych elementów
+      if (visibleElements.isEmpty()) {
+        break;
+      }
+    }
+
+    return totalSum;
   }
 
 }

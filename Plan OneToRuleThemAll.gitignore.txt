@@ -1,7 +1,8 @@
 1. Dostać się na stronę głowną
 2. Zastosować filtry
 3. Policzyć ilość ogłoszeń na stronie
-	3a. Zrobić asercję z ilości: obczić jak scrollować jedną stronę w dół i spróbować kodu z gemini
+	3a. Zrobić asercję z ilości
+	    3a.i
 4. Wejśc w ogłoszenie
 	4a. Otworzyć ogłoszenie
 	4b. Zebrać dane (zastanowić się czy na tym etapie wrzucam już raport do SQL)
@@ -11,5 +12,5 @@
 7. Wrzucić na GITa. Poczytać czy potrzebna zewnętrzna kontrola wersji - Jenkins
 	
 	
-	
-	#__next > div.MuiBox-root.css-1v89lmg > div > div > div.MuiBox-root.css-1fmajlu > div > div > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(2) > div > div > div.css-1offut2
+
+ js.executeScript("arguments[0].scrollIntoView(true)", lastElement);
