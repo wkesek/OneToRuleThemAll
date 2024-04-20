@@ -25,7 +25,7 @@ public class AdList extends DefaultPage {
 //  @FindBy(  = "#__next > div.MuiBox-root.css-1v89lmg > div.css-c4vap3 > div > div.MuiBox-root.css-1fmajlu > div > div > div:nth-child(3) > div > div:nth-child(2)")
 //  private WebElement listElement;
 
-  WebDriverWait wait = new WebDriverWait( driver, 5 );
+  WebDriverWait wait = new WebDriverWait( driver, 10 );
   JavascriptExecutor js = (JavascriptExecutor) driver;
 
   public AdList(WebDriver driver) {
@@ -45,40 +45,26 @@ public class AdList extends DefaultPage {
 
   public int countAds() {
 
-    int totalSum = 0;
+    int totalElementsCount = 0;
     // Pobranie listy elementów
-    WebElement listElement = driver.findElement(By.className( "css-2crog7" ));
+    WebElement listElement = driver.findElement(By.cssSelector( "div[data-test-id='virtuoso-item-list']" ));
     List<WebElement> visibleElements = driver.findElements( By.className( "css-2crog7" ) );
     WebElement lastElement = visibleElements.get(visibleElements.size() - 1);
+    totalElementsCount += visibleElements.size();
 
 
+    // Dopóki nie zostaną znalezione nowe elementy
     while (true) {
-      // Pobranie wartości liczbowych z widocznych elementów
-      for (WebElement element : visibleElements) {
-        String elementText = element.getText();
-        try {
-          int elementValue = Integer.parseInt(elementText);
-          totalSum += elementValue;
-        } catch (NumberFormatException e) {
-          // Pomiń element, jeśli nie zawiera liczby
-        }
-      }
-
-      // Przescrollowanie listy o wysokość widocznej części
       js.executeScript("arguments[0].scrollIntoView(true)", lastElement);
-
-      // Znalezienie nowych widocznych elementów
-      visibleElements = listElement.findElements(By.className( "css-2crog7"));
-
-      // Sprawdzenie, czy nie ma już nowych elementów
+      visibleElements = listElement.findElements(By.cssSelector( "div[data-test-id='virtuoso-item-list']" ));
+      totalElementsCount += visibleElements.size();
       if (visibleElements.isEmpty()) {
         break;
       }
     }
 
-    return totalSum;
+    return totalElementsCount;
   }
-
 }
 
 
