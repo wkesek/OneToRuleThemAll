@@ -15,8 +15,9 @@ public class AdListTest extends DefaultTest {
 //        adList.salaryFilterClick();
         adList.testsClick();
         adList.countAds();
+
 //        int expectedCount = 22;
 //        Assert.assertEquals( adList.countAds(), expectedCount );
-        System.out.println( "Znalozem " + adList.countAds() + " ogłoszeń" );
+//        System.out.println( "Znalozem " + adList.countAds() + " ogłoszeń" );
         }
 }

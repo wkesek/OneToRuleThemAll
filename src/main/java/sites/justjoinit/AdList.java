@@ -43,28 +43,17 @@ public class AdList extends DefaultPage {
   }
 
 
-  public int countAds() {
+  public void countAds() {
+    ((JavascriptExecutor) driver).executeScript( "window.scrollTo(0, document.body.scrollHeight)" );//wrzucić do DefaultPage ale naprawić skrollowanie powrotne
+    List<WebElement> adsList = driver.findElements( By.className( "css-2crog7" ));
+    int index = 1;
 
-    int totalElementsCount = 0;
-    // Pobranie listy elementów
-    WebElement listElement = driver.findElement(By.cssSelector( "div[data-test-id='virtuoso-item-list']" ));
-    List<WebElement> visibleElements = driver.findElements( By.className( "css-2crog7" ) );
-    WebElement lastElement = visibleElements.get(visibleElements.size() - 1);
-    totalElementsCount += visibleElements.size();
-
-
-    // Dopóki nie zostaną znalezione nowe elementy
-    while (true) {
-      js.executeScript("arguments[0].scrollIntoView(true)", lastElement);
-      visibleElements = listElement.findElements(By.cssSelector( "div[data-test-id='virtuoso-item-list']" ));
-      totalElementsCount += visibleElements.size();
-      if (visibleElements.isEmpty()) {
-        break;
-      }
+    for (WebElement element : adsList) {
+      System.out.println("Index: " + index + ", Element: " + element.getText());
+      index++;
     }
-
-    return totalElementsCount;
   }
 }
 
+//    return highestIndexElement;
 
