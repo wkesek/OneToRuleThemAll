@@ -1,6 +1,5 @@
 package sites.justjoinit;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -14,19 +13,18 @@ public abstract class DefaultPage {
         PageFactory.initElements( this.driver, this );
     }
 
-    protected void fillElement(WebElement element, String value){
+    protected void fillElement(WebElement element, String value) {
         element.clear();
-        element.sendKeys(value);
+        element.sendKeys( value );
     }
 
-    protected void clickElement(WebElement element){
+    protected void clickElement(WebElement element) {
         element.click();
     }
 
-    protected void scrollToElement(WebDriver driver ){
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 200)");
+    protected void printValue(Integer value) {
+        System.out.println( value );
     }
-
 }
 
 

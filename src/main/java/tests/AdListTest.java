@@ -14,7 +14,9 @@ public class AdListTest extends DefaultTest {
         adList.cookiesClick();
 //        adList.salaryFilterClick();
         adList.testsClick();
+        adList.scrollToBottom();
         adList.countAds();
+        adList.printNumber();
 
 //        int expectedCount = 22;
 //        Assert.assertEquals( adList.countAds(), expectedCount );

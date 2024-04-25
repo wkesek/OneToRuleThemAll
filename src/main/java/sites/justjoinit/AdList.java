@@ -8,8 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-
 
 public class AdList extends DefaultPage {
 
@@ -42,18 +40,38 @@ public class AdList extends DefaultPage {
     clickElement( testsFilter );
   }
 
+  public void scrollToBottom() {
+    WebElement footer = driver.findElement( By.className( "css-gstxgp" ) );
+    ((JavascriptExecutor) driver).executeScript( "arguments[0].scrollIntoView();", footer );
+  }
 
-  public void countAds() {
-    ((JavascriptExecutor) driver).executeScript( "window.scrollTo(0, document.body.scrollHeight)" );//wrzucić do DefaultPage ale naprawić skrollowanie powrotne
-    List<WebElement> adsList = driver.findElements( By.className( "css-2crog7" ));
-    int index = 1;
+  public int countAds() {
+    // Locate the list container element
+    String listContainerSelector = "div[data-test-id='virtuoso-item-list']"; // Replace with your actual selector
+    String listItemSelector = "[data-index]"; // Replace with your actual selector for list items
+    WebElement listContainerElement = driver.findElement( By.cssSelector( listContainerSelector ) );
 
-    for (WebElement element : adsList) {
-      System.out.println("Index: " + index + ", Element: " + element.getText());
-      index++;
+
+    // Initialize variables to track the highest index and element
+    int highestIndex = -1;
+    WebElement highestIndexElement = null;
+
+    // Iterate through list items and find the highest index
+    for (WebElement listItem : listContainerElement.findElements( By.cssSelector( listItemSelector ) )) {
+      String indexString = listItem.getAttribute( "data-index" ); // Assuming elements have a data-index attribute
+      int index = Integer.parseInt( indexString );
+
+      if (index > highestIndex) {
+        highestIndex = index;
+        highestIndexElement = listItem;
+
+      }
     }
+    return highestIndex;
+  }
+
+public void printNumber() {
+  printValue(countAds());
   }
 }
-
-//    return highestIndexElement;
 
