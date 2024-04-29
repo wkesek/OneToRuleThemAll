@@ -1,11 +1,18 @@
 1. Dostać się na stronę głowną
 2. Zastosować filtry
 3. Policzyć ilość ogłoszeń na stronie
-	3a. Zrobić asercję z ilości
-	    3a.i
+	3a. Znaleźć ogłoszenie z najwyższym indexem
+	3b. Wyświetlić informacje o ilości ogłoszeń
 4. Wejśc w ogłoszenie
 	4a. Otworzyć ogłoszenie
-	4b. Zebrać dane (zastanowić się czy na tym etapie wrzucam już raport do SQL)
+	4b. Zebrać dane
+	    4.b.i Przygotować metody pobierające dane:
+	        - Stanowisko
+	        - Firma
+	        - Widełki
+	        - Informacje o pracy (tryb, typ, kontrakt, poziom)
+	        - Tech Stack ze stopniem zaawansowania (po kolorach kropek - inne li class)
+	        - Link do ogłoszenia
 	4c. Wrócić do głównej
 5. Powtórzyć 4 dla reszty ogłoszeń
 6. Wrzucić dane z raportu do SQLa

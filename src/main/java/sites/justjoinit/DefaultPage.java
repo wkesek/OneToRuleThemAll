@@ -25,6 +25,10 @@ public abstract class DefaultPage {
     protected void printValue(Integer value) {
         System.out.println( value );
     }
+
+    protected void goBack(){
+        driver.navigate().back();
+    }
 }
 
 

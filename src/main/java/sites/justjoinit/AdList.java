@@ -26,9 +26,9 @@ public class AdList extends DefaultPage {
   WebDriverWait wait = new WebDriverWait( driver, 10 );
   JavascriptExecutor js = (JavascriptExecutor) driver;
 
-  public AdList(WebDriver driver) {
-    super( driver ); //super - odwołuje się do konstruktora nadrzędnego
-  }
+    public AdList(WebDriver driver) {
+      super( driver ); //super - odwołuje się do konstruktora nadrzędnego
+    }
 
   public void cookiesClick() {
     wait.until( ExpectedConditions.elementToBeClickable( acceptCookies ) );
