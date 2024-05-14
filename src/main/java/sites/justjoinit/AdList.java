@@ -5,23 +5,17 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class AdList extends DefaultPage {
-
+/*
   @FindBy(id = "cookiescript_accept")
-  private WebElement acceptCookies;
+  private WebElement acceptCookies; */
 
   @FindBy(css = "#__next > div.MuiBox-root.css-1v89lmg > div > div > div.MuiBox-root.css-4i8gwt > div.css-jn9ffp > div.MuiBox-root.css-1mzo6co > a:nth-child(11)")
   private WebElement testsFilter;
 
-  @FindBy(css = "#mui-p-16968-T-salaryOnly")
-  private WebElement withSalaryFilter;
-
-//  @FindBy(  = "#__next > div.MuiBox-root.css-1v89lmg > div.css-c4vap3 > div > div.MuiBox-root.css-1fmajlu > div > div > div:nth-child(3) > div > div:nth-child(2)")
-//  private WebElement listElement;
 
   WebDriverWait wait = new WebDriverWait( driver, 10 );
   JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -29,7 +23,7 @@ public class AdList extends DefaultPage {
     public AdList(WebDriver driver) {
       super( driver ); //super - odwołuje się do konstruktora nadrzędnego
     }
-
+/*
   public void cookiesClick() {
     wait.until( ExpectedConditions.elementToBeClickable( acceptCookies ) );
     clickElement( acceptCookies );
@@ -38,7 +32,7 @@ public class AdList extends DefaultPage {
   public void testsClick() {
     wait.until( ExpectedConditions.elementToBeClickable( testsFilter ) );
     clickElement( testsFilter );
-  }
+  }*/
 
   public void scrollToBottom() {
     WebElement footer = driver.findElement( By.className( "css-gstxgp" ) );

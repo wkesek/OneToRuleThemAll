@@ -5,7 +5,7 @@
 	3b. Wyświetlić informacje o ilości ogłoszeń
 4. Wejśc w ogłoszenie
 	4a. Otworzyć ogłoszenie
-	4b. Zebrać dane
+	4b. Zebrać dane - zrobić teardown AfterTest żeby odpalało taki zestaw po każdej klasie testowej
 	    4.b.i Przygotować metody pobierające dane:
 	        - Stanowisko
 	        - Firma

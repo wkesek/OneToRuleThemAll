@@ -11,9 +11,8 @@ public class AdListTest extends DefaultTest {
         //filtruje ogłoszenia
 
         AdList adList = new AdList( driver );
-        adList.cookiesClick();
-//        adList.salaryFilterClick();
-        adList.testsClick();
+//        adList.cookiesClick();
+//        adList.testsClick();
         adList.scrollToBottom();
         adList.countAds();
         adList.printNumber();
