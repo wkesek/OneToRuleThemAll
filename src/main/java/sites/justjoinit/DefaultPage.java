@@ -26,7 +26,11 @@ public abstract class DefaultPage {
         System.out.println( value );
     }
 
-    protected void goBack(){
+    protected void printText(String value) {
+        System.out.println( value );
+    }
+
+    public void goBack(){
         driver.navigate().back();
     }
 }

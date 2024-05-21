@@ -11,14 +11,9 @@ public class AdListTest extends DefaultTest {
         //filtruje ogłoszenia
 
         AdList adList = new AdList( driver );
-//        adList.cookiesClick();
-//        adList.testsClick();
         adList.scrollToBottom();
         adList.countAds();
         adList.printNumber();
 
-//        int expectedCount = 22;
-//        Assert.assertEquals( adList.countAds(), expectedCount );
-//        System.out.println( "Znalozem " + adList.countAds() + " ogłoszeń" );
         }
 }

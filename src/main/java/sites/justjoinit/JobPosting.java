@@ -12,22 +12,23 @@ public class JobPosting extends DefaultPage {
     }
 
     //Ogłoszenie na sztywno narazie
-    @FindBy(xpath = "//html/body/div[1]/div[3]/div[1]/div/div[2]/div/div/div[3]/div/div[2]/div[1]/div/div")
+    @FindBy(className = "css-2crog7")
     private WebElement testAdd;
 
     //weście do ogłoszenia przez clickElement
     //wyjście z ogłoszenia przez goBack
 
-    public void openAdd (){
+    public void openAdd() {
         clickElement( testAdd );
     }
 
-    public void getJobName(){
-       WebElement addNaming = driver.findElement( By.id( "h1" ));
-       String jobName =addNaming.getAttribute( "css-370yn4" );
-        System.out.println(jobName);
+    public String getJobName() {
+        WebElement element = driver.findElement( By.cssSelector( "h1.css-370yn4" ) );
+        String text = element.getText();
+        System.out.println( text );
+        return text;
     }
-
+}
 
 
     /*
@@ -38,4 +39,3 @@ public class JobPosting extends DefaultPage {
         WebElement listContainerElement = driver.findElement( By.cssSelector( listContainerSelector ) );
 
     } */
-}
