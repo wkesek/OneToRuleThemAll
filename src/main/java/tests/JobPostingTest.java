@@ -11,6 +11,8 @@ public class JobPostingTest extends DefaultTest{
 
         jobPosting.openAdd();
         jobPosting.getJobName();
+        jobPosting.getCompanyName();
         jobPosting.goBack();
+        ;
     }
 }

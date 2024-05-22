@@ -23,8 +23,15 @@ public class JobPosting extends DefaultPage {
     }
 
     public String getJobName() {
-        WebElement element = driver.findElement( By.cssSelector( "h1.css-370yn4" ) );
-        String text = element.getText();
+        WebElement jobName = driver.findElement( By.cssSelector( "h1.css-370yn4" ) );
+        String text = jobName.getText();
+        System.out.println( text );
+        return text;
+    }
+
+    public String getCompanyName(){
+        WebElement companyName = driver.findElement( By.className( "css-mbkv7r" ) );
+        String text = companyName.getText();
         System.out.println( text );
         return text;
     }
