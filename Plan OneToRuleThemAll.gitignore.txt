@@ -14,13 +14,6 @@
 	        - Tech Stack ze stopniem zaawansowania (po kolorach kropek - inne li class)
 	        - Link do ogłoszenia
 	4c. Wrócić do głównej
-5. Powtórzyć 4 dla reszty ogłoszeń
-6. Wrzucić dane z raportu do SQLa
+5. Wrzucić dane z raportu do SQLa
+6. Powtórzyć 4 dla reszty ogłoszeń
 7. Wrzucić na GITa. Poczytać czy potrzebna zewnętrzna kontrola wersji - Jenkins
-	
-	
-
- js.executeScript("arguments[0].scrollIntoView(true)", lastElement);
-
-
- pobawić się samym scrollem

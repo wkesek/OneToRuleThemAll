@@ -12,7 +12,11 @@ public class JobPostingTest extends DefaultTest{
         jobPosting.openAdd();
         jobPosting.getJobName();
         jobPosting.getCompanyName();
+        jobPosting.getSalaryRange();
+        jobPosting.getContractType();
+        jobPosting.getWorkType();
+        jobPosting.getOperatingMode();
+        jobPosting.getExperienceLevel();
         jobPosting.goBack();
-        ;
     }
 }
