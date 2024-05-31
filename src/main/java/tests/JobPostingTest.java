@@ -16,7 +16,11 @@ public class JobPostingTest extends DefaultTest{
         jobPosting.getContractType();
         jobPosting.getWorkType();
         jobPosting.getOperatingMode();
+        jobPosting.firstLocation();
+        jobPosting.openDropdown();
+        jobPosting.printLocations();
         jobPosting.getExperienceLevel();
+        jobPosting.getTechStack();
         jobPosting.goBack();
     }
 }

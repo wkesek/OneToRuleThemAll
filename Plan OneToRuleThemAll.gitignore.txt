@@ -11,6 +11,7 @@
 	        - Firma
 	        - Widełki
 	        - Informacje o pracy (tryb, typ, kontrakt, poziom)
+	        - Lokalizacja
 	        - Tech Stack ze stopniem zaawansowania (po kolorach kropek - inne li class)
 	        - Link do ogłoszenia
 	4c. Wrócić do głównej

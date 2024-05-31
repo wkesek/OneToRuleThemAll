@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class JobPosting extends DefaultPage {
 
 
@@ -13,7 +15,7 @@ public class JobPosting extends DefaultPage {
     }
 
     //Ogłoszenie na sztywno narazie
-    @FindBy(className = "css-2crog7")
+    @FindBy(className = "css-1iq2gw3")
     private WebElement testAdd;
 
     //weście do ogłoszenia przez clickElement
@@ -65,20 +67,44 @@ public class JobPosting extends DefaultPage {
         return text;
     }
 
+    public void openDropdown() {
+        WebElement locationDropdown = driver.findElement(By.className( "css-1seeldo" ));
+        clickElement( locationDropdown );
+    }
+
+    public void firstLocation(){
+        WebElement location1 = driver.findElement( By.className( "css-1seeldo" ) );
+        String location = location1.getText();
+        System.out.println(location);
+    }
+
+    public void printLocations(){
+        List<WebElement> location = driver.findElements( By.className( "css-1si1hfj" ) );
+            for (WebElement element : location) {
+                if (element.getAttribute("class").contains("css-1si1hfj")) {
+                    String miasto = element.getText();
+                    System.out.println(miasto );
+                }
+            }
+        }
+
     public String getExperienceLevel(){
         WebElement experienceLevel = driver.findElement( By.xpath( "//html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]" ) );
         String text = experienceLevel.getText();
         System.out.println( text );
         return text;
     }
+
+    public void getTechStack(){
+        List<WebElement> stackList = driver.findElements( By.className("css-0"));
+
+        for (WebElement techItem : stackList) {
+            if (techItem.getAttribute("class").contains( "MuiTypography-root MuiTypography-subtitle2 css-x1xnx3" )) {
+                String technology = techItem.getText();
+                System.out.println( technology );
+            }
+
+        }
+    }
 }
 
-
-    /*
-
-    public void openAllAds() {
-        String listContainerSelector = "div[data-test-id='virtuoso-item-list']"; // Replace with your actual selector
-        String listItemSelector = "[data-index]"; // Replace with your actual selector for list items
-        WebElement listContainerElement = driver.findElement( By.cssSelector( listContainerSelector ) );
-
-    } */
