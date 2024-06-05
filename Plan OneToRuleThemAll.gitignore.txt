@@ -12,7 +12,7 @@
 	        - Widełki
 	        - Informacje o pracy (tryb, typ, kontrakt, poziom)
 	        - Lokalizacja
-	        - Tech Stack ze stopniem zaawansowania (po kolorach kropek - inne li class)
+	        - Tech Stack (ze stopniem zaawansowania (po kolorach kropek - inne li class)) *-
 	        - Link do ogłoszenia
 	4c. Wrócić do głównej
 5. Wrzucić dane z raportu do SQLa

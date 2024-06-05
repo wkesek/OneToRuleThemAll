@@ -96,15 +96,19 @@ public class JobPosting extends DefaultPage {
     }
 
     public void getTechStack(){
-        List<WebElement> stackList = driver.findElements( By.className("css-0"));
-
+        List<WebElement> stackList = driver.findElements( By.cssSelector("h6"));
         for (WebElement techItem : stackList) {
-            if (techItem.getAttribute("class").contains( "MuiTypography-root MuiTypography-subtitle2 css-x1xnx3" )) {
+            if (techItem.getAttribute("class").contains( "css-x1xnx3" )) {
                 String technology = techItem.getText();
                 System.out.println( technology );
             }
-
         }
+    }
+
+    public String getLink(){
+        String link = driver.getCurrentUrl();
+        System.out.println(link);
+        return link;
     }
 }
 

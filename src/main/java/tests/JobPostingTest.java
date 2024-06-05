@@ -21,6 +21,7 @@ public class JobPostingTest extends DefaultTest{
         jobPosting.printLocations();
         jobPosting.getExperienceLevel();
         jobPosting.getTechStack();
+        jobPosting.getLink();
         jobPosting.goBack();
     }
 }
