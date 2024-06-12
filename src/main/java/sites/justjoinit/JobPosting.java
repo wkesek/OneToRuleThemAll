@@ -16,7 +16,7 @@ public class JobPosting extends DefaultPage {
 
     //Ogłoszenie na sztywno narazie
     @FindBy(className = "css-1iq2gw3")
-    private WebElement testAdd;
+    public WebElement testAdd;
 
     //weście do ogłoszenia przez clickElement
     //wyjście z ogłoszenia przez goBack
@@ -111,4 +111,5 @@ public class JobPosting extends DefaultPage {
         return link;
     }
 }
+
 

@@ -26,8 +26,8 @@ public class AdList extends DefaultPage {
 
   public int countAds() {
     // Locate the list container element
-    String listContainerSelector = "div[data-test-id='virtuoso-item-list']"; // Replace with your actual selector
-    String listItemSelector = "[data-index]"; // Replace with your actual selector for list items
+    String listContainerSelector = "div[data-test-id='virtuoso-item-list']";
+    String listItemSelector = "[data-index]";
     WebElement listContainerElement = driver.findElement( By.cssSelector( listContainerSelector ) );
 
 
@@ -36,13 +36,13 @@ public class AdList extends DefaultPage {
     WebElement highestIndexElement = null;
 
     // Iterate through list items and find the highest index
-    for (WebElement listItem : listContainerElement.findElements( By.cssSelector( listItemSelector ) )) {
-      String indexString = listItem.getAttribute( "data-index" ); // Assuming elements have a data-index attribute
-      int index = Integer.parseInt( indexString );
+      for (WebElement listItem : listContainerElement.findElements( By.cssSelector( listItemSelector ) )) {
+        String indexString = listItem.getAttribute( "data-index" ); // Assuming elements have a data-index attribute
+          int index = Integer.parseInt( indexString );
 
-      if (index > highestIndex) {
-        highestIndex = index;
-        highestIndexElement = listItem;
+            if (index > highestIndex) {
+              highestIndex = index;
+              highestIndexElement = listItem;
 
       }
     }

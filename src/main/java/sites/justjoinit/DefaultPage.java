@@ -18,7 +18,7 @@ public abstract class DefaultPage {
         element.sendKeys( value );
     }
 
-    protected void clickElement(WebElement element) {
+    public void clickElement(WebElement element) {
         element.click();
     }
 
