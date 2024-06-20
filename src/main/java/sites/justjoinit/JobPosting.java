@@ -3,7 +3,6 @@ package sites.justjoinit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class JobPosting extends DefaultPage {
         super( driver ); //super - odwołuje się do konstruktora nadrzędnego
     }
 
-    //Ogłoszenie na sztywno narazie
+/*    //Ogłoszenie na sztywno narazie
     @FindBy(className = "css-1iq2gw3")
     public WebElement testAdd;
 
@@ -24,7 +23,7 @@ public class JobPosting extends DefaultPage {
     public void openAdd() {
         clickElement( testAdd );
     }
-
+*/
     public String getJobName() {
         WebElement jobName = driver.findElement( By.cssSelector( "h1.css-370yn4" ) );
         String text = jobName.getText();
@@ -33,7 +32,7 @@ public class JobPosting extends DefaultPage {
     }
 
     public String getCompanyName(){
-        WebElement companyName = driver.findElement( By.className( "css-mbkv7r" ) );
+        WebElement companyName = driver.findElement( By.xpath( "//html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]" ) );
         String text = companyName.getText();
         System.out.println( text );
         return text;
@@ -68,12 +67,12 @@ public class JobPosting extends DefaultPage {
     }
 
     public void openDropdown() {
-        WebElement locationDropdown = driver.findElement(By.className( "css-1seeldo" ));
+        WebElement locationDropdown = driver.findElement(By.xpath( "//html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div" ));
         clickElement( locationDropdown );
     }
-
+//OGARNĄĆ UNIVERSALNĄ METODĘ NA LOKACJĘ, CZĘŚĆ MA TYLKO JEDNĄ I NIE MA BUTTONA.PEWNIE IF-em
     public void firstLocation(){
-        WebElement location1 = driver.findElement( By.className( "css-1seeldo" ) );
+        WebElement location1 = driver.findElement( By.xpath( "//html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div" ) );
         String location = location1.getText();
         System.out.println(location);
     }
@@ -96,9 +95,9 @@ public class JobPosting extends DefaultPage {
     }
 
     public void getTechStack(){
-        List<WebElement> stackList = driver.findElements( By.cssSelector("h6"));
+        List<WebElement> stackList = driver.findElements( By.cssSelector("h4"));
         for (WebElement techItem : stackList) {
-            if (techItem.getAttribute("class").contains( "css-x1xnx3" )) {
+            if (techItem.getAttribute("class").contains( "aria-label" )) {
                 String technology = techItem.getText();
                 System.out.println( technology );
             }
