@@ -67,12 +67,12 @@ public class JobPosting extends DefaultPage {
     }
 
     public void openDropdown() {
-        WebElement locationDropdown = driver.findElement(By.xpath( "//html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div" ));
+        WebElement locationDropdown = driver.findElement(By.xpath( "//*[@id=\"__next\"]/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]" ));
         clickElement( locationDropdown );
     }
 //OGARNĄĆ UNIVERSALNĄ METODĘ NA LOKACJĘ, CZĘŚĆ MA TYLKO JEDNĄ I NIE MA BUTTONA.PEWNIE IF-em
     public void firstLocation(){
-        WebElement location1 = driver.findElement( By.xpath( "//html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]/div" ) );
+        WebElement location1 = driver.findElement( By.xpath( "//*[@id=\"__next\"]/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[2]" ) );
         String location = location1.getText();
         System.out.println(location);
     }

@@ -29,7 +29,7 @@ public class FirstTest{
     @BeforeMethod
 
     public void setUp (){
-        System.setProperty( "webdriver.chrome.driver", "C:\\Users\\Wojtek\\OneDrive\\Pulpit\\drivers\\chromedriver-win64\\chromedriver.exe");
+        System.setProperty( "webdriver.chrome.driver", "C:\\Users\\Wojtek\\OneDrive\\Pulpit\\drivers\\chromedriver-win64New\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait( 50, TimeUnit.SECONDS);
         driver.manage().window().maximize();
