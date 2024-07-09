@@ -2,10 +2,11 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import sites.justjoinit.JobPosting;
+
+import java.util.List;
 
 public class JobPostingTest extends DefaultTest {
 
@@ -57,44 +58,34 @@ public class JobPostingTest extends DefaultTest {
 
     @Test
     public void clickElementsWithDataIndex() {
+        // Pobranie wszystkich elementów z atrybutem data-index
+        List<WebElement> elements = driver.findElements( By.cssSelector( "[data-index]" ) );
+        int numberOfElements = countAds();
 
-        int index = 0;
-        while (true) {
-            try {
-                // Znalezienie elementu z aktualnym indeksem
-                WebElement element = driver.findElement(By.cssSelector("[data-index='" + index + "']"));
+        // Iteracja przez elementy i kliknięcie na każdy z nich zgodnie z rosnącymi indeksami
+        for (int i = 0; i < countAds(); i++) {
+            if (i % 16 == 0 || i == numberOfElements - 1) {
+                WebElement element = driver.findElement( By.cssSelector( "[data-index='" + i + "']" ) );
+                ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 
-                // Przewinięcie do elementu co 16 indeksów
-                if (index % 16 == 0) {
-                    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-
-                    // Dodanie małej przerwy po przewinięciu, aby strona miała czas na załadowanie
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-//                WebElement elementToGo = driver.findElement( By.cssSelector( "[data-index='" + index + "']" ) );
-                WebElement linkElement = element.findElement(By.tagName("a"));
-                String url = linkElement.getAttribute("href");
-                driver.navigate().to(url);
-                getAddData();
-
-                // Dodanie małej przerwy po każdym kliknięciu, aby uniknąć problemów z ładowaniem strony
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+            }
+            WebElement elementToGo = driver.findElement( By.cssSelector( "[data-index='" + i + "']" ) );
+            WebElement linkElement = elementToGo.findElement(By.tagName("a"));
+            String url = linkElement.getAttribute("href");
+            driver.navigate().to(url);
+            getAddData();
 
-                index++;
-            } catch (NoSuchElementException e) {
-                // Jeśli nie ma więcej elementów, zakończ pętlę
-                break;
+            // Dodanie małej przerwy po każdym kliknięciu, aby uniknąć problemów z ładowaniem strony
+            try {
+                Thread.sleep( 500 );
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
-
 }
