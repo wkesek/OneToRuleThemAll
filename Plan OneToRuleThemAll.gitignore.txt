@@ -1,0 +1,20 @@
+1. Dostać się na stronę głowną
+2. Zastosować filtry
+3. Policzyć ilość ogłoszeń na stronie
+	3a. Znaleźć ogłoszenie z najwyższym indexem
+	3b. Wyświetlić informacje o ilości ogłoszeń
+4. Wejśc w ogłoszenie
+	4a. Otworzyć ogłoszenie
+	4b. Zebrać dane - zrobić teardown AfterTest żeby odpalało taki zestaw po każdej klasie testowej
+	    4.b.i Przygotować metody pobierające dane:
+	        - Stanowisko
+	        - Firma
+	        - Widełki
+	        - Informacje o pracy (tryb, typ, kontrakt, poziom)
+	        - Lokalizacja
+	        - Tech Stack (ze stopniem zaawansowania (po kolorach kropek - inne li class)) *-
+	        - Link do ogłoszenia
+	4c. Wrócić do głównej
+5. Wrzucić dane z raportu do SQLa
+6. Powtórzyć 4 dla reszty ogłoszeń
+7. Wrzucić na GITa. Poczytać czy potrzebna zewnętrzna kontrola wersji - Jenkins
