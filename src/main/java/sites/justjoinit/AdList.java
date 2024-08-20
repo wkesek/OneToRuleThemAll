@@ -6,21 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-<<<<<<< HEAD
 import java.time.Duration;
 
 
 public class AdList extends DefaultPage {
 
+
+
   WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(10) );
-=======
-
-public class AdList extends DefaultPage {
-
-
-
-  WebDriverWait wait = new WebDriverWait( driver, 10 );
->>>>>>> a55e7a43876fab04b7a87bbefc57f55c16cf5d40
   JavascriptExecutor js = (JavascriptExecutor) driver;
 
     public AdList(WebDriver driver) {

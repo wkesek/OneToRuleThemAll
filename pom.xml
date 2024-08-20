@@ -14,54 +14,26 @@
     </properties>
 
     <dependencies>
-<<<<<<< HEAD
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.10.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>4.18.1</version>
-=======
 
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.9.0</version>
+            <version>7.10.2</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
-            <version>3.141.59</version>
->>>>>>> a55e7a43876fab04b7a87bbefc57f55c16cf5d40
+            <version>4.18.1</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-<<<<<<< HEAD
             <version>4.18.1</version>
-=======
-            <version>3.141.59</version>
->>>>>>> a55e7a43876fab04b7a87bbefc57f55c16cf5d40
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-support</artifactId>
-<<<<<<< HEAD
             <version>4.18.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.10.2</version>
-            <scope>compile</scope>
-=======
-            <version>3.141.59</version>
->>>>>>> a55e7a43876fab04b7a87bbefc57f55c16cf5d40
         </dependency>
 
     </dependencies>
