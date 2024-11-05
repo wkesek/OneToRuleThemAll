@@ -15,6 +15,7 @@
 	        - Tech Stack (ze stopniem zaawansowania (po kolorach kropek - inne li class)) *-
 	        - Link do ogłoszenia
 	4c. Wrócić do głównej
-5. Wrzucić dane z raportu do SQLa
-6. Powtórzyć 4 dla reszty ogłoszeń
+5. Powtórzyć 4 dla reszty ogłoszeń( NFJ :w pętli klikać pokaż więcej elementów aż zniknie a potem zobaczyć czy .size()
+ odczyta ilość i do tego się ewentualnie odwoływać)
+6. Wrzucić dane z raportu do SQLa
 7. Wrzucić na GITa. Poczytać czy potrzebna zewnętrzna kontrola wersji - Jenkins

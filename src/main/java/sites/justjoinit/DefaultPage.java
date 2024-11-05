@@ -1,5 +1,7 @@
 package sites.justjoinit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -30,10 +32,10 @@ public abstract class DefaultPage {
         System.out.println( value );
     }
 
-    public void goBack(){
-        driver.navigate().back();
-    }
+    public void goBack(){driver.navigate().back();}
+
 }
+
 
 
 
