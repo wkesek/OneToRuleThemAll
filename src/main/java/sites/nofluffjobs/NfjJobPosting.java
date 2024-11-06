@@ -16,9 +16,9 @@ public class NfjJobPosting extends NfjDefaultPage {
 
             while (true) {
                 try {
-                    WebElement showMoreButton = driver.findElement(By.cssSelector("body > nfj-root > nfj-layout > nfj-main-content > div > nfj-postings-search > div > div.tw-mb-5.tw-mt-3.lg\\:tw-mt-6.container > div > div > common-main-loader > div > nfj-search-results > div.tw-flex.tw-flex-wrap.tw-justify-center.tw-mt-1\\.5.tw-mb-8.tw-gap-4 > button"));
+                    WebElement showMoreButton = driver.findElement(By.cssSelector("button[nfjloadmore]"));
                     if (showMoreButton.isDisplayed()) {
-                        ((JavascriptExecutor) driver).executeScript( "arguments[0].scrollIntoView();", showMoreButton);
+                        ((JavascriptExecutor) driver).executeScript( "arguments[0].scrollIntoView(); window.scrollBy(0, -100);", showMoreButton);
                         showMoreButton.click();
 
 
